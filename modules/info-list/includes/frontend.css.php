@@ -581,7 +581,7 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 			<?php
 		}
 	}
-}
+	
 if ( ! $version_bb_check ) {
 	if ( isset( $settings->heading_font_size['small'] ) || isset( $settings->heading_line_height['small'] ) || isset( $settings->description_font_size['small'] ) || isset( $settings->description_line_height['small'] ) || isset( $settings->heading_font_size_unit_responsive ) || isset( $settings->heading_line_height_unit_responsive ) || isset( $settings->description_font_size_unit_responsive ) || isset( $settings->description_line_height_unit_responsive ) || 'stack' == $settings->mobile_view ) {
 		?>
@@ -625,10 +625,11 @@ if ( ! $version_bb_check ) {
 					<?php } elseif ( isset( $settings->description_line_height_unit_responsive ) && '' == $settings->description_line_height_unit_responsive && isset( $settings->description_line_height['small'] ) && '' != $settings->description_line_height['small'] ) { ?>
 						line-height: <?php echo $settings->description_line_height['small']; ?>px;
 					<?php } ?>
-				}
-			}	
-				<?php
+					}
+				<?php } ?>
 			}
+			<?php
+		}
 	}
 	?>
 	@media ( max-width: <?php echo $global_settings->responsive_breakpoint . 'px'; ?> ) {
